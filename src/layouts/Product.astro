@@ -1,0 +1,26 @@
+---
+
+import { type CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<'products'>['data'];
+
+const { title, description, pubDate, heroImage, price, category } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+	</head>
+	<body>
+    <main>
+      <h2>{title}</h2>
+      <span>{pubDate}</span>
+      <span>{price}</span>
+      <slot/>
+    </main>
+	</body>
+</html>
